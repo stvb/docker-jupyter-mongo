@@ -15,9 +15,9 @@ RUN chmod +x /tini
 ENTRYPOINT ["/tini", "--"]
 
 RUN git clone git://github.com/mongodb/mongo-c-driver.git
-CD mongo-c-driver
+RUN cd mongo-c-driver
 RUN ./build/mci.sh --notest
-CD ..
+RUN cd ..
 RUN dpkg --install libmongoc-*.deb libbson-*.deb
 
 #install jupyter with some extras
