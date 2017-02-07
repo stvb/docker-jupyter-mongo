@@ -15,7 +15,7 @@ RUN chmod +x /tini
 ENTRYPOINT ["/tini", "--"]
 
 #install jupyter with some extras
-RUN pip3 install py4j jupyter bravado numpy scipy seaborn bokeh matplotlib monary pymongo
+RUN pip3 install wheel pkgconfig py4j jupyter bravado numpy scipy seaborn bokeh matplotlib monary pymongo
 
 RUN mkdir -p /root/.jupyter && mkdir -p /data
 COPY jupyter_notebook_config.py /root/.jupyter/
